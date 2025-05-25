@@ -13,7 +13,6 @@ class Ingredient
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
-        $this->modificationAt = new \DateTimeImmutable();
     }
 
 
@@ -35,12 +34,6 @@ class Ingredient
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
-
-    #[ORM\Column]
-    private ?\DateTimeImmutable $modificationAt = null;
-
-    #[ORM\Column]
-    private ?\DateTimeImmutable $deleteAt = null;
 
     public function getId(): ?int
     {
@@ -79,30 +72,6 @@ class Ingredient
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getModificationAt(): ?\DateTimeImmutable
-    {
-        return $this->modificationAt;
-    }
-
-    public function setModificationAt(\DateTimeImmutable $modificationAt): static
-    {
-        $this->modificationAt = $modificationAt;
-
-        return $this;
-    }
-
-    public function getDeleteAt(): ?\DateTimeImmutable
-    {
-        return $this->deleteAt;
-    }
-
-    public function setDeleteAt(\DateTimeImmutable $deleteAt): static
-    {
-        $this->deleteAt = $deleteAt;
 
         return $this;
     }

@@ -1,3 +1,8 @@
+
+Sur la vidéo :
+https://www.youtube.com/watch?v=3K6oBiQK8aA&t=1s&ab_channel=D%C3%A9veloppeurMuscl%C3%A9
+Je suis à 2h
+
 Configuration :
 
 Création d'un projet :
@@ -74,3 +79,14 @@ Formulaire :
 
     composer require form
     symfony console make:form 
+
+
+Authentification
+
+Installation :
+
+    composer require symfony/security-bundle
+
+Création utilisateur :
+
+    symfony console make:user

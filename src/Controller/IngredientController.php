@@ -26,7 +26,7 @@ final class IngredientController extends AbstractController
 
 
     #[Route('/ingredient/nouveau', name: 'app_ingredient_new',methods: ['GET','POST'])]
-    public function new() : response
+    public function new(Request $request) : response
     {
 
         // Récupère les données de la table Ingredient
@@ -35,6 +35,8 @@ final class IngredientController extends AbstractController
         // Import les donées du formulaire
         $form = $this->createForm(IngredientTypeForm::class, $ingredient);
 
+        // Lie les données de la requête HTTP au formulaire et à l'entité
+        $form->handleRequest($request);
 
 
         return $this->render('ingredient/new.html.twig', ['ingredient' => $ingredient, 'form' => $form->createView()]);

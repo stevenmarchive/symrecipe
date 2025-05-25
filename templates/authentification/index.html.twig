@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SymRecipe - Authentification{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="my-3">Formulaire de connexion</h1>
+
+
+        {% if error %}
+            <div class="alert alert-danger mt-4">{{ error.messageKey|trans(error.messageData,'security') }}</div>
+        {% endif %}
+
+
+        <form action="{{ path('auth_login') }}" method="post">
+            <div class="form-group">
+                <label for="email" class="form-label mt-4">Adresse email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Adresse email" value="{{ lastUsername }}" >
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label mt-4">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Mot de passe" name="password">
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-4">Connexion</button>
+
+        </form>
+
+    </div>
+
+{% endblock %}

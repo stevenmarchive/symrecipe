@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
-class IngredientTypeForm extends AbstractType
+class IngredientForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {

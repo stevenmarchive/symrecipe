@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Ingredient;
-use App\Form\IngredientTypeForm;
+use App\Form\IngredientForm;
 use App\Repository\IngredientRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,7 +33,7 @@ final class IngredientController extends AbstractController
         $ingredient = new Ingredient();
 
         // Import les donées du formulaire
-        $form = $this->createForm(IngredientTypeForm::class, $ingredient);
+        $form = $this->createForm(IngredientForm::class, $ingredient);
 
         // Lie les données de la requête HTTP au formulaire et à l'entité
         $form->handleRequest($request);
